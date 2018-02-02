@@ -19,7 +19,7 @@
        (proto (if no-ssl "http" "https")))
   ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
   (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
-  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+  (add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
   (when (< emacs-major-version 24)
     ;; For important compatibility libraries like cl-lib
     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
@@ -64,24 +64,6 @@
 (local-set-key [tab] 'irony--indent-or-complete))
 (add-hook 'c-mode-common-hook 'irony-mode-keys)
 
-;; code commenting
-(defun comment-or-uncomment-region-or-line ()
-  (interactive)
-  (let (beg end)
-    (if (region-active-p)
-	(setq beg (region-beginning) end (region-end))
-      (setq beg (line-beginning-position) end (line-end-position)))
-    (comment-or-uncomment-region beg end)))
-(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region-or-line)
-(defun my-cmode-hook ()
-  (local-set-key (kbd "C-c C-c") 'comment-or-uncomment-region-or-line)
-  )
-(add-hook 'c-mode-common-hook 'my-cmode-hook)
-(add-hook 'python-mode-hook
-          (lambda ()
-            (define-key python-mode-map (kbd "C-c C-c")
-                        'comment-or-uncomment-region-or-line)))
-
 ;; Enable mouse support
 (unless window-system
   (require 'mouse)
@@ -97,18 +79,10 @@
 )
 
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
     (elpy flycheck-irony irony-eldoc company-irony irony))))
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  )
 
 ;; python ide
@@ -116,7 +90,7 @@
 (elpy-enable)
 
 ;; julia ide
-(add-to-list 'load-path "/Users/kundanc/.emacs.d/julia-emacs/")
+(add-to-list 'load-path "~/.emacs.d/julia-emacs/")
 (require 'julia-mode)
 
 ;; Scrolling in tmux
