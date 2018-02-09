@@ -79,10 +79,18 @@
 )
 
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (elpy flycheck-irony irony-eldoc company-irony irony))))
+    (go-mode elpy flycheck-irony irony-eldoc company-irony irony))))
 (custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
 
 ;; python ide
@@ -121,3 +129,6 @@
 
 (global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
 (global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
+
+;; smaller tab sizes
+(setq default-tab-width 2)
