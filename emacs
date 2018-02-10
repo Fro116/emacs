@@ -132,3 +132,6 @@
 
 ;; smaller tab sizes
 (setq default-tab-width 2)
+
+;; show column number
+(setq column-number-mode t)
