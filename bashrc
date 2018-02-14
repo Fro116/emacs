@@ -35,3 +35,7 @@ clean () {
         rm .*~
     fi
 }
+
+# emacs
+alias e='emacs -nw'
+export EDITOR=emacs
