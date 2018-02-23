@@ -142,3 +142,9 @@
 (add-hook 'go-mode-hook 'auto-complete-for-go)
 (with-eval-after-load 'go-mode
    (require 'go-autocomplete))
+(defun my-go-mode-hook ()
+    ;; Godef jump key binding
+    (local-set-key (kbd "C-c j") 'godef-jump-other-window)
+    (local-set-key (kbd "C-c .") 'pop-tag-mark)
+    )
+(add-hook 'go-mode-hook 'my-go-mode-hook)
