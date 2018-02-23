@@ -84,8 +84,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (go-mode elpy flycheck-irony irony-eldoc company-irony irony))))
+	 (quote
+		(go-autocomplete auto-complete go-mode elpy flycheck-irony irony-eldoc company-irony irony))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -135,3 +135,10 @@
 
 ;; show column number
 (setq column-number-mode t)
+
+;; go autocompelete
+(defun auto-complete-for-go ()
+  (auto-complete-mode 1))
+(add-hook 'go-mode-hook 'auto-complete-for-go)
+(with-eval-after-load 'go-mode
+   (require 'go-autocomplete))
