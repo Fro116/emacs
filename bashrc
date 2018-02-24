@@ -5,7 +5,7 @@
     export LS_OPTIONS='--color=auto'
     alias ls='ls -G -F -h'
     # customized prompt output
-    PS1='\[\e[38;5;086m\]\h:\W \u\$\[\e[m\] '
+    PS1='\[\e[36m\]\h:\W \u\$\[\e[m\] '
     # customized grep output
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
