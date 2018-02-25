@@ -146,5 +146,14 @@
     ;; Godef jump key binding
     (local-set-key (kbd "C-c j") 'godef-jump-other-window)
     (local-set-key (kbd "C-c .") 'pop-tag-mark)
+		;; auto format
+		(add-hook 'before-save-hook 'gofmt-before-save)
     )
 (add-hook 'go-mode-hook 'my-go-mode-hook)
+
+
+(defun my-prog-mode-hook ()
+		;; whitespace cleanup
+		(add-hook 'before-save-hook 'whitespace-cleanup)
+    )
+(add-hook 'prog-mode-hook 'my-prog-mode-hook)
