@@ -38,3 +38,6 @@
     (add-hook 'before-save-hook 'whitespace-cleanup)
     )
 (add-hook 'prog-mode-hook 'my-prog-mode-hook)
+
+;; enable mouse mode
+(xterm-mouse-mode 1)
