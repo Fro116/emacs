@@ -27,8 +27,8 @@
 (require 'julia-mode)
 
 ;; tab formatting
-(setq default-tab-width 2)
 (setq-default indent-tabs-mode nil)
+(setq c-default-style "linux" c-basic-offset 4)
 
 ;; show column number
 (setq column-number-mode t)
