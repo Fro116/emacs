@@ -55,3 +55,10 @@
   (defun track-mouse (e))
   (setq mouse-sel-mode t)
 )
+
+;; interactive browsing
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(autoload 'ibuffer "ibuffer" "List buffers." t)
+(require 'ibuf-ext)
+(add-to-list 'ibuffer-never-show-predicates "^\\*")
+(global-set-key (kbd "C-x C-d") 'dired)
