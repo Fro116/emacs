@@ -21,3 +21,8 @@ export EDITOR=emacs
 
 # remap caps lock to ctrl
 # xmodmap ~/.xmodmap
+
+# search for a file
+function search(){
+    find . -maxdepth 1 -iname "*$1*"
+}
