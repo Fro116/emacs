@@ -13,8 +13,6 @@
 (global-set-key (kbd "C-x C-d") 'dired)
 
 ;; switch between windows
-(global-set-key (kbd "C-x o") 'ace-window)
-(global-set-key (kbd "C-c o") 'ace-window)
 (global-set-key (kbd "C-c <up>") 'windmove-up)
 (global-set-key (kbd "C-c <left>") 'windmove-left)
 (global-set-key (kbd "C-c <down>") 'windmove-down)

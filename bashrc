@@ -24,5 +24,5 @@ export EDITOR=emacs
 
 # search for a file
 function search(){
-    find . -maxdepth 1 -iname "*$1*"
+    find . -maxdepth 1 -regextype posix-extended -iregex ".*$1.*"
 }
