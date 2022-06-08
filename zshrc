@@ -13,9 +13,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 export CASE_SENSITIVE="true"
 zstyle ':completion:*' accept-exact-dirs true
 zstyle ':completion:*' use-cache yes
-zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
-autoload -Uz compinit
-compinit -i -D
 
 # plugins
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
@@ -39,6 +36,10 @@ ev() {
 
 # colors
 export LS_COLORS='di=1;35:fi=0:ln=1;32:pi=5:so=5:bd=5:cd=5:or=1;32:mi=0:ex=1;31:*.rpm=90'
+export LSCOLORS=FxCxxxxxBxxxxxxxxxxxxx
+zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
+autoload -Uz compinit
+compinit -i -D
 alias ls='ls --color=auto -F'
 alias grep='grep --color=auto'
 
