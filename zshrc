@@ -22,14 +22,8 @@ source $ZSH/oh-my-zsh.sh
 
 # emacs
 export EDITOR="emacs -nw"
-e() {
-    if [ $# -gt 0 ]
-    then
-	emacsclient -t --eval "(progn (find-file \""$@"\") (setq buffer-read-only nil))"
-    else
-	emacsclient -t --eval "(progn (setq buffer-read-only nil))"
-    fi
-}
+alias e='emacsclient -nw'
+alias er='emacs -nw'
 ev() {
     emacsclient -t --eval "(progn (find-file \""$@"\") (setq buffer-read-only t))"
 }

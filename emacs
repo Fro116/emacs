@@ -11,6 +11,9 @@
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-n") 'backward-paragraph)
 
+;;truncate lines
+(set-default 'truncate-lines t)
+
 ;; select region color
 (transient-mark-mode 1)
 (set-face-attribute 'region nil :background "#ff99cc")
@@ -24,8 +27,13 @@
 (global-set-key [(control x) (k)] 'kill-this-buffer)
 
 ;; avoid using C-f, C-g, and C-d to free them up for other uses
+(define-key key-translation-map [?\C-t] [?\C-f])
+(define-key key-translation-map [?\C-l] [?\C-g])
 (global-set-key (kbd "C-p") 'find-file)
-(keyboard-translate ?\C-l ?\C-g)
+(global-set-key (kbd "C-o") 'find-file)
+
+;; comment lines
+(global-set-key (kbd "C-;") 'comment-line)
 
 ;; autoreload changed files
 (setq revert-without-query '(".*"))
