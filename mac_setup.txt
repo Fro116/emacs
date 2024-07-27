@@ -1,0 +1,42 @@
+# setup terminal
+# Install ITerm2
+* Preferences > general > closing: disable confirm to quit
+* Preferences > Profiles > Keys > General > option to Esc+
+* Preferences > Profiles > Keys > Key Mappings > Presets > Natural Text Editing
+* Preferences > Keys > Key bindings > + > cmd+d -> Send Hex Code 0x04
+* Preferences > Profiles > Terminal > Silence Bell
+* Preferences > Profiles > Terminal > disable Show mark indicators
+* Preferences > Profiles > Colors > Color Presets > High Contrast
+* Preferences > Profiles > Colors > Color Presets > Disable use different colors for light and dark mode
+
+# dock settings
+* Hot corners > disable
+* Auto hide docks
+
+# Install Chrome
+
+# setup keyboard shortcuts
+* set capslock and control
+* App shortcuts: Find... to Ctrl+S for all apps
+* App shortcuts: Find... to Cmd+F for ITerm2
+* Mission Control: show desktop, move left/right a space
+
+# install homebrew and emacs
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew tap d12frosted/emacs-plus
+brew install emacs-plus --with-native-comp
+git clone https://github.com/Fro116/emacs.git
+cp emacs/emacs ~/.emacs
+
+# install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+emacs -nw ~/.zshrc
+* ZSH_THEME="powerlevel10k/powerlevel10k"
+* restart terminal
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+cp emacs/zshrc ~/.zshrc
+
+# install julia
+curl -fsSL https://install.julialang.org | sh
