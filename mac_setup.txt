@@ -1,6 +1,6 @@
 # setup terminal
 # Install ITerm2
-* Preferences > general > closing: disable confirm to quit
+* Preferences > General > Closing > disable confirm to quit
 * Preferences > Profiles > Keys > General > option to Esc+
 * Preferences > Profiles > Keys > Key Mappings > Presets > Natural Text Editing
 * Preferences > Keys > Key bindings > + > cmd+d -> Send Hex Code 0x04
@@ -8,6 +8,7 @@
 * Preferences > Profiles > Terminal > disable Show mark indicators
 * Preferences > Profiles > Colors > Color Presets > High Contrast
 * Preferences > Profiles > Colors > Color Presets > Disable use different colors for light and dark mode
+* Preferences > General > Selection > disable clicking on a command selects it to restrict Find and Filter
 
 # dock settings
 * Hot corners > disable
