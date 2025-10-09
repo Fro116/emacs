@@ -24,7 +24,7 @@
 (global-set-key (kbd "C-c <down>") 'windmove-down)
 (global-set-key (kbd "C-c <right>") 'windmove-right)
 (global-set-key (kbd "C-c o") 'other-window)
-(global-set-key [(control x) (k)] 'kill-this-buffer)
+(global-set-key [(control x) (k)] 'kill-current-buffer)
 
 ;; avoid using C-f, C-g, and C-d to free them up for other uses
 (define-key key-translation-map [?\C-t] [?\C-f])
@@ -38,4 +38,5 @@
 ;; autoreload changed files
 (setq revert-without-query '(".*"))
 
-
+;; julia mode
+(use-package julia-mode :ensure t)
